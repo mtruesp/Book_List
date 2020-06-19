@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { selectBook } from '../../actions'
 
 const List = (props) => {  
-    
+    console.log(props)
     return(
         <Container>
             {
@@ -26,7 +26,6 @@ const List = (props) => {
 }
 
 const creacionDeProps = (state) => {
-    console.log(state)
     return {
         list: state.list
     }

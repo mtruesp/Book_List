@@ -19,7 +19,7 @@ class App extends React.Component{
                         <List></List>
                     </Col>
                     <Col sm="6">
-                        {/* <Details bookSelected={this.state.bookSelected}></Details> */}
+                        <Details></Details>
                     </Col>
                 </Row>
             </Container>

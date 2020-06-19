@@ -1,31 +1,34 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-class Info extends React.Component{
+const Info = (props) => {
 
-    render(){
-        {
-            if(this.props.bookSelected != null){
-                return(
-                    <Container>
-                        <Row>
-                            <Col>Nombre: {this.props.bookSelected.name}</Col>
-                            <Col>Autor: {this.props.bookSelected.author}</Col>
-                        </Row>
-                    </Container>
-                )
-            }
-            else{
-                return(
-                    <Container>
-                        Selecciona un libro
-                    </Container>
-                )
-            }
-        }
+    console.log(props)
 
-       
+    if(props.bookSelected != null){
+        return(
+            <Container>
+                <Row>
+                    <Col>Nombre: {props.bookSelected.name}</Col>
+                    <Col>Autor: {props.bookSelected.author}</Col>
+                </Row>
+            </Container>
+        )
+    }
+    else{
+        return(
+            <Container>
+                Selecciona un libro
+            </Container>
+        )
     }
 }
 
-export default Info
+const mapStateToProps = (state) => {
+    return {
+        bookSelected: state.bookSelected
+    }
+}
+
+export default connect(mapStateToProps)(Info)
