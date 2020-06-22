@@ -1,3 +1,5 @@
+import userApi from '../api/userApi'
+
 //Actions creator
 export const selectBook = (book) => {
     //Action
@@ -6,3 +8,13 @@ export const selectBook = (book) => {
         payload: book
     }
 } 
+
+export const getUsers = () => {
+    return async (dispatch, getState) => {
+        const users = await userApi.get('/users')
+        dispatch({
+            type: 'GET_USER',
+            payload: users.data
+        })
+    }
+}

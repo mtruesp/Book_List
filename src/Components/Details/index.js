@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 
 const Info = (props) => {
 
-    console.log(props)
-
     if(props.bookSelected != null){
         return(
             <Container>

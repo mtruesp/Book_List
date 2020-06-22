@@ -26,7 +26,17 @@ const selectedBookReducer = (selectedBook = null, action) => {
     }
 }
 
+const userReducers = (users = [], action) => {
+    switch(action.type){
+        case 'GET_USER':
+            return action.payload
+        default:
+            return users
+    }
+}
+
 export default combineReducers({
     list: booksReducer,
-    bookSelected: selectedBookReducer
+    bookSelected: selectedBookReducer,
+    users: userReducers
 })
